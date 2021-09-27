@@ -23,7 +23,7 @@ server.get('/weather', (req, res) => {
         let weatherOfCity = req.query.nameOfCity;
 
         let cityInfo = dataWeather.find((item)=>{
-            if(item.city_name === weatherOfCity) {
+            if(item.city_name.toLocaleLowerCase === weatherOfCity) {
                 return item;
             }
         });
